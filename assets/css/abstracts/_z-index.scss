@@ -1,0 +1,30 @@
+// z-index 믹스인
+@use "../themes/set-color" as *;
+
+@mixin z-dropdown {
+  z-index: $z-dropdown;
+}
+
+@mixin z-sticky {
+  z-index: $z-sticky;
+}
+
+@mixin z-fixed {
+  z-index: $z-fixed;
+}
+
+@mixin z-modal-backdrop {
+  z-index: $z-modal-backdrop;
+}
+
+@mixin z-modal {
+  z-index: $z-modal;
+}
+
+@mixin z-popover {
+  z-index: $z-popover;
+}
+
+@mixin z-tooltip {
+  z-index: $z-tooltip;
+} 

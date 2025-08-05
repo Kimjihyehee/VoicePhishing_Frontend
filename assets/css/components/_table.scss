@@ -1,0 +1,18 @@
+// 테이블 컴포넌트
+@use "../themes/set-color" as *;
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  
+  th, td {
+    padding: $spacing-sm $spacing-md;
+    border-bottom: 1px solid $border-color;
+    text-align: left;
+  }
+  
+  th {
+    background-color: $bg-secondary;
+    font-weight: $font-weight-semibold;
+  }
+} 

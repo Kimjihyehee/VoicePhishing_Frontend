@@ -1,0 +1,33 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "NODE_ENV=develop nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt-alt/proxy": "^2.5.8",
+    "@nuxt/content": "^3.6.3",
+    "@nuxt/eslint": "^1.7.0",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@pinia/nuxt": "^0.11.2",
+    "@types/lodash": "^4.17.20",
+    "@vueuse/components": "^13.6.0",
+    "ag-grid-community": "^34.0.2",
+    "ag-grid-vue3": "^34.0.2",
+    "better-sqlite3": "^12.2.0",
+    "eslint": "^9.31.0",
+    "lodash": "^4.17.21",
+    "nuxt": "^3.17.7",
+    "pinia": "^3.0.3",
+    "sass": "^1.89.2",
+    "vue": "^3.5.17",
+    "vue-final-modal": "^4.5.5",
+    "vue-router": "^4.5.1",
+    "vue3-tooltip": "^2.2.4"
+  }
+}

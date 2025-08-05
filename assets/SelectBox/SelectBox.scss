@@ -1,0 +1,344 @@
+// SelectBox SCSS 스타일
+.select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  flex-shrink: 0;
+
+  // 기본 사이즈 믹스인
+  @mixin select-size(
+    $font-size: 14px,
+    $size: 44px,
+    $gap: 8px,
+    $right-padding: 16px,
+    $left-padding: 16px,
+    $icon-size: 14px,
+    $indicator-size: 14px
+  ) {
+    height: $size;
+
+    .select-button {
+      transition: all 0.2s ease-in-out;
+      gap: $gap;
+      padding: 0 $right-padding 0 $left-padding;
+      height: $size;
+
+      .select-button-icon {
+        width: $icon-size;
+        height: $icon-size;
+      }
+
+      .select-button-title {
+        font-size: $font-size;
+      }
+    }
+
+    .select-indicator {
+      width: $indicator-size;
+      height: $indicator-size;
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+
+  @include select-size;
+
+  &-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+    &-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #1f2937;
+      text-align: left;
+      flex-grow: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      .icon {
+        font-size: 14px;
+      }
+    }
+
+    &-sub-title {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    &:hover:not(:disabled) {
+      border-color: #3b82f6;
+      background-color: #f8fafc;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      transform: translateY(-1px);
+    }
+
+    &:active:not(:disabled) {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      background-color: #ffffff;
+      transform: translateY(0);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    &:disabled {
+      background-color: #f3f4f6;
+      cursor: not-allowed;
+      opacity: 0.6;
+      border: none;
+      box-shadow: none;
+
+      .select-button-title {
+        color: #9ca3af;
+      }
+
+      .select-indicator {
+        color: #9ca3af;
+      }
+    }
+  }
+
+  .select-indicator {
+    color: #6b7280;
+    margin-left: auto;
+    transition: transform 0.15s ease-in-out;
+  }
+
+  &.is-select-open {
+    .select-button {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+
+      &-title {
+        color: #3b82f6;
+      }
+
+      &-icon {
+        color: #3b82f6;
+      }
+    }
+
+    .select-indicator {
+      transform: rotate(180deg);
+    }
+
+    .dropdown {
+      display: block;
+    }
+  }
+
+  // 값 오류 스타일
+  &.is-select-invalid {
+    .select-button {
+      border: 1px solid #ef4444;
+    }
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    margin-top: 8px;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    max-height: 240px;
+    overflow-y: auto;
+    display: none;
+    backdrop-filter: blur(10px);
+  }
+
+  .dropdown-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .dropdown-item {
+    border-bottom: 1px solid #f3f4f6;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &.disabled-option {
+      .dropdown-button {
+        color: #9ca3af;
+        cursor: not-allowed;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+
+    &.is-dropdown-item-selected {
+      .dropdown-button {
+        background-color: #dbeafe;
+        color: #1d4ed8;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .dropdown-button {
+    width: 100%;
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    border-radius: 8px;
+    margin: 2px 4px;
+
+    &:hover {
+      background-color: #f1f5f9;
+      color: #3b82f6;
+    }
+  }
+
+  .icon {
+    font-size: 14px;
+  }
+
+  .dropdown-text {
+    flex: 1;
+  }
+
+  .button {
+    padding: 4px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    background-color: #ffffff;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.15s ease-in-out;
+
+    &:hover {
+      background-color: #f3f4f6;
+    }
+
+    &-icon {
+      font-size: 12px;
+    }
+  }
+
+  .hidden-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .notification {
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+
+    &-info {
+      background-color: #eff6ff;
+      color: #1d4ed8;
+    }
+
+    &-detail {
+      margin: 0;
+    }
+  }
+
+  // Clean 스타일
+  &-clean {
+    .select-button {
+      background: transparent;
+      border-color: transparent;
+      box-shadow: none;
+
+      &:hover {
+        background: #d1d5db;
+      }
+
+      &:active:not(:disabled) {
+        background: transparent;
+        outline: none;
+        border: 1px solid #3b82f6;
+      }
+    }
+
+    &.is-select-open {
+      .select-button,
+      .select-button:active {
+        border-color: transparent;
+        box-shadow: none;
+        outline: none;
+        background: #dbeafe;
+      }
+
+      .select-indicator {
+        color: #3b82f6;
+      }
+    }
+  }
+
+  // Size 변형
+  &-lg {
+    @include select-size(
+      $font-size: 14px,
+      $size: 36px,
+      $gap: 12px,
+      $right-padding: 16px,
+      $left-padding: 20px,
+      $icon-size: 20px,
+      $indicator-size: 18px
+    );
+
+    .dropdown {
+      top: 36px;
+    }
+  }
+
+  &-sm {
+    @include select-size(
+      $font-size: 12px,
+      $size: 28px,
+      $gap: 8px,
+      $right-padding: 12px,
+      $left-padding: 16px,
+      $icon-size: 16px
+    );
+
+    .dropdown {
+      top: 28px;
+    }
+  }
+} 

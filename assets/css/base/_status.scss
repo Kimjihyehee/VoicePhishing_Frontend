@@ -1,0 +1,30 @@
+// 상태 관련 클래스들
+@use "../themes/set-color" as *;
+
+// 로딩 상태
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+// 비활성화 상태
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+// 숨김 상태
+.hidden {
+  display: none !important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+// 포커스 상태
+.focus-visible {
+  outline: 2px solid $primary-color;
+  outline-offset: 2px;
+} 

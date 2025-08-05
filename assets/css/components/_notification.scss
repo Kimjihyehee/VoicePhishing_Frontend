@@ -1,0 +1,32 @@
+// 알림 컴포넌트
+@use "../themes/set-color" as *;
+
+.notification {
+  padding: $spacing-md;
+  border-radius: $border-radius-md;
+  margin-bottom: $spacing-md;
+  
+  &--info {
+    background-color: rgba($info-color, 0.1);
+    color: darken($info-color, 20%);
+    border: 1px solid rgba($info-color, 0.2);
+  }
+  
+  &--success {
+    background-color: rgba($success-color, 0.1);
+    color: darken($success-color, 20%);
+    border: 1px solid rgba($success-color, 0.2);
+  }
+  
+  &--warning {
+    background-color: rgba($warning-color, 0.1);
+    color: darken($warning-color, 20%);
+    border: 1px solid rgba($warning-color, 0.2);
+  }
+  
+  &--error {
+    background-color: rgba($error-color, 0.1);
+    color: darken($error-color, 20%);
+    border: 1px solid rgba($error-color, 0.2);
+  }
+} 

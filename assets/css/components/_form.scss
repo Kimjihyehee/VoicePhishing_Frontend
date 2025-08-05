@@ -1,0 +1,17 @@
+// 폼 컴포넌트
+@use "../themes/set-color" as *;
+
+.form-input {
+  width: 100%;
+  padding: $spacing-sm $spacing-md;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-md;
+  font-size: $font-size-sm;
+  transition: border-color $transition-fast ease;
+  
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+  }
+} 

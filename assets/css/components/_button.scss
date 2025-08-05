@@ -1,0 +1,57 @@
+// 버튼 컴포넌트
+@use "../themes/set-color" as *;
+@use "../abstracts/mixin-helper" as *;
+
+.btn {
+  @include flex-center;
+  padding: $spacing-sm $spacing-md;
+  border: 1px solid transparent;
+  border-radius: $border-radius-md;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all $transition-normal ease;
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  &--primary {
+    background-color: $primary-color;
+    color: white;
+    
+    &:hover:not(:disabled) {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+  
+  &--secondary {
+    background-color: $bg-secondary;
+    color: $text-primary;
+    border-color: $border-color;
+    
+    &:hover:not(:disabled) {
+      background-color: darken($bg-secondary, 5%);
+    }
+  }
+  
+  &--success {
+    background-color: $success-color;
+    color: white;
+    
+    &:hover:not(:disabled) {
+      background-color: darken($success-color, 10%);
+    }
+  }
+  
+  &--danger {
+    background-color: $error-color;
+    color: white;
+    
+    &:hover:not(:disabled) {
+      background-color: darken($error-color, 10%);
+    }
+  }
+} 

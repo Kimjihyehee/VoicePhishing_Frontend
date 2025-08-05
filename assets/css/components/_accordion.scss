@@ -1,0 +1,30 @@
+// 아코디언 컴포넌트
+@use "../themes/set-color" as *;
+
+.accordion {
+  border: 1px solid $border-color;
+  border-radius: $border-radius-md;
+  
+  &__item {
+    border-bottom: 1px solid $border-color;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  &__header {
+    padding: $spacing-md;
+    cursor: pointer;
+    @include flex-between;
+    
+    &:hover {
+      background-color: $bg-secondary;
+    }
+  }
+  
+  &__content {
+    padding: $spacing-md;
+    border-top: 1px solid $border-color;
+  }
+} 

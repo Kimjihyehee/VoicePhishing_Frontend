@@ -1,0 +1,21 @@
+// 로딩 컴포넌트
+@use "../themes/set-color" as *;
+@use "../abstracts/mixin-helper" as *;
+
+.loading {
+  @include flex-center;
+  
+  &__spinner {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid $border-color;
+    border-top: 2px solid $primary-color;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} 

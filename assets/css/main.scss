@@ -1,0 +1,545 @@
+// 기본 리셋
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+  background-color: #f9fafb;
+}
+
+#__nuxt {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+// 전체 레이아웃 강제 설정
+.min-h-screen {
+  min-height: 100vh !important;
+  width: 100vw !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+// 로고 링크 스타일
+.logo-link {
+  width: 60px;
+  height: 30px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" fill="white"><text x="5" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold">관리자</text></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.logo-link:hover {
+  opacity: 0.8;
+}
+
+// 굴림 폰트 설정
+.font-gulim {
+  font-family: 'Gulim', '굴림', 'GulimChe', sans-serif;
+}
+
+// 민트 계열 색상 변수
+:root {
+  --teal-50: #f0fdfa;
+  --teal-100: #ccfbf1;
+  --teal-200: #99f6e4;
+  --teal-300: #5eead4;
+  --teal-400: #2dd4bf;
+  --teal-500: #14b8a6;
+  --teal-600: #0d9488;
+  --teal-700: #0f766e;
+  --teal-800: #115e59;
+  --teal-900: #134e4a;
+}
+
+// 변수 정의
+:root {
+  --primary-color: #3b82f6;
+  --secondary-color: #64748b;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --border-color: #e5e7eb;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --border-radius: 0.375rem;
+  --border-radius-lg: 0.5rem;
+}
+
+// 기본 레이아웃 클래스
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 768px) {
+  .md\\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .md\\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+// 기본 스페이싱
+.p-6 {
+  padding: 1.5rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+// 기본 타이포그래피
+.text-center {
+  text-align: center;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+// 기본 색상
+.text-gray-900 {
+  color: #111827;
+}
+
+.text-gray-600 {
+  color: #4b5563;
+}
+
+.text-gray-500 {
+  color: #6b7280;
+}
+
+.text-gray-700 {
+  color: #374151;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.bg-gray-50 {
+  background-color: #f9fafb;
+}
+
+.bg-blue-600 {
+  background-color: #2563eb;
+}
+
+.bg-green-600 {
+  background-color: #16a34a;
+}
+
+.bg-gray-500 {
+  background-color: #6b7280;
+}
+
+// 기본 테두리
+.border {
+  border-width: 1px;
+}
+
+.border-gray-300 {
+  border-color: #d1d5db;
+}
+
+.border-gray-200 {
+  border-color: #e5e7eb;
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+// 기본 그림자
+.shadow-md {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+// 기본 버튼 스타일
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.btn-secondary {
+  background-color: #6b7280;
+  color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #4b5563;
+}
+
+// 기본 폼 스타일
+.form-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  transition: border-color 0.2s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+// 기본 카드 스타일
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  padding: 1.5rem;
+}
+
+// 기본 테이블 스타일
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+}
+
+// 기본 애니메이션
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// AG Grid 커스텀 스타일 (순수 CSS)
+.ag-theme-alpine {
+  border: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.ag-theme-alpine .ag-header {
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ag-theme-alpine .ag-header-cell {
+  border-right: 1px solid #e5e7eb;
+  padding: 0.75rem;
+}
+
+.ag-theme-alpine .ag-header-cell-text {
+  font-weight: 600;
+  color: #111827;
+  font-size: 0.875rem;
+}
+
+.ag-theme-alpine .ag-header-cell-sorted-asc,
+.ag-theme-alpine .ag-header-cell-sorted-desc {
+  background-color: #eff6ff;
+}
+
+.ag-theme-alpine .ag-row {
+  border-bottom: 1px solid #f3f4f6;
+  transition: background-color 0.2s ease;
+}
+
+.ag-theme-alpine .ag-row:hover {
+  background-color: #eff6ff;
+}
+
+.ag-theme-alpine .ag-row.ag-row-selected {
+  background-color: #dbeafe;
+}
+
+.ag-theme-alpine .ag-cell {
+  border-right: 1px solid #f3f4f6;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.ag-theme-alpine .ag-cell:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px #3b82f6;
+}
+
+.ag-theme-alpine .ag-checkbox-input-wrapper {
+  border-radius: 0.25rem;
+  border: 1px solid #d1d5db;
+}
+
+.ag-theme-alpine .ag-checkbox-input-wrapper.ag-checked {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.ag-theme-alpine .ag-overlay-no-rows-center {
+  color: #6b7280;
+  text-align: center;
+  padding: 2rem;
+}
+
+.ag-theme-alpine .ag-overlay-loading-wrapper {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.ag-theme-alpine .ag-overlay-loading-center {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+// AG Grid 스크롤바 스타일
+.ag-theme-alpine .ag-body-vertical-scroll-viewport::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ag-theme-alpine .ag-body-vertical-scroll-viewport::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.ag-theme-alpine .ag-body-vertical-scroll-viewport::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.ag-theme-alpine .ag-body-vertical-scroll-viewport::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.ag-theme-alpine .ag-body-horizontal-scroll-viewport::-webkit-scrollbar {
+  height: 8px;
+}
+
+.ag-theme-alpine .ag-body-horizontal-scroll-viewport::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.ag-theme-alpine .ag-body-horizontal-scroll-viewport::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.ag-theme-alpine .ag-body-horizontal-scroll-viewport::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+// AG Grid 컨텍스트 메뉴 스타일
+.ag-theme-alpine .ag-menu {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.ag-theme-alpine .ag-menu-option {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+}
+
+.ag-theme-alpine .ag-menu-option:hover {
+  background-color: #f9fafb;
+}
+
+.ag-theme-alpine .ag-menu-option.ag-menu-option-active {
+  background-color: #eff6ff;
+}
+
+// AG Grid 툴팁 스타일
+.ag-theme-alpine .ag-tooltip {
+  background-color: #1f2937;
+  color: white;
+  font-size: 0.875rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  border: none;
+}
+
+// AG Grid 필터 스타일
+.ag-theme-alpine .ag-filter-toolpanel-header {
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ag-theme-alpine .ag-filter-condition-operator {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+}
+
+// 반응형 디자인
+@media (max-width: 768px) {
+  .ag-theme-alpine .ag-header-cell {
+    font-size: 0.75rem;
+  }
+  
+  .ag-theme-alpine .ag-cell {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+}

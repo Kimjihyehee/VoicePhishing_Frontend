@@ -1,0 +1,12 @@
+// 레티나 디스플레이 믹스인
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+@mixin retina-3x {
+  @media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+    @content;
+  }
+} 
